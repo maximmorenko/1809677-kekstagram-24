@@ -1,22 +1,20 @@
- // Любое целое число random между min ( включено ) и max ( включено ):
- function randomNumber(min, max) {
-  if (min > max || min == max || min < 0) {
-      console.log('Задайте правильные аргументы: минимальное число должно быть меньше максимального и больше или равно нулю');
-       return
+// Любое целое число random между min ( включено ) и max ( включено ):
+function randomNumber (min, max) {
+  if (min > max || min === max || min < 0) {
+    return false;
   }
-return Math.round(Math.random() * (max - min) + min);
+  return Math.round(Math.random() * (max - min) + min);
 }
-console.log(randomNumber(0, 7));
-
+randomNumber(6, 8);
 // Функция для проверки максимальной длины строки
-let comment = 'какой-то коммент';
-let maxNum = 20;
-let checkLengthComment = function() {
+const comment = 'какой-то коммент';
+const maxNum = 20;
+const checkLengthComment = function () {
   if (comment.length <= maxNum) {
-    console.log(true);
+    return true;
   }
   else {
-    console.log(false);
+    return false;
   }
-}
-checkLengthComment(comment, maxNum)
+};
+checkLengthComment(comment, maxNum);
