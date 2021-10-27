@@ -45,10 +45,10 @@ const createObject = () => {
   randomComent;
   return {
     number: randomIdObject,
-    photos: PHOTOS[randomPhotos],
+    img: PHOTOS[randomPhotos],
     description: DESCRIPTION[randomDescription],
     likes: randomLikes,
-    comment: randomComent,
+    comments: randomComent,
   };
 };
 const similarObject = Array.from({length: SIMILAR_OBJECT_COUNT}, createObject);

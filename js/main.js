@@ -1,2 +1,2 @@
-import {similarObject} from './create-object.js';
-console.log(similarObject);
+import {addPicture} from './create-picture.js';
+addPicture();
