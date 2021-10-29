@@ -17,6 +17,6 @@ const createObject = () => {
     comment: randomComment,
   };
 };
-const similarObject = Array.from({length: SIMILAR_OBJECT_COUNT}, createObject);
-console.log(similarObject);
-export {similarObject};
+const similarObjects = Array.from({length: SIMILAR_OBJECT_COUNT}, createObject);
+console.log(similarObjects);
+export {similarObjects};

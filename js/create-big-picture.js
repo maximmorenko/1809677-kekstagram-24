@@ -28,7 +28,9 @@ const getPhotosInfo = () => {
   // добавляю класс боди чтобы фон не скролил
   body.classList.add('modal-open');
   // удаляю класс хиден чтобы увидеть инфоблок фото
-  bigPicture.classList.remove('hidden');
+
+  // bigPicture.classList.remove('hidden');
+
   // прячу счетчик коментов и кнопку загрузки
   socialCommentCount.classList.add('hidden');
   buttonCommentsLoader.classList.add('hidden');
@@ -36,9 +38,9 @@ const getPhotosInfo = () => {
   // подставляю фото из массива через рандом
   bigPictureImg.src = photoUrl;
   // подставляю лайки
-  bigPictureLikes.textContent = likesId(15, 200);
+  bigPictureLikes.textContent = likesId;
   // подставляю кол-во коментариев в .comments-count
-  bigPictureCommentsCount.textContent = photoCommentsCount(1, 100);
+  bigPictureCommentsCount.textContent = photoCommentsCount;
   // подставляю аватар и имя
   commentItemImg.src = avatarUrl;
   commentItemImg.alt = randomNameIndex;
