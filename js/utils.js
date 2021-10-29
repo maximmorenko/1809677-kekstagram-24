@@ -8,8 +8,8 @@ const photoUrl = _.random(0, PHOTOS.length - 1);
 const likesId = _.random(15, 200);
 // likesId(15, 200);
 
-const photoCommentsCount = _.random(1, 200);
-// photoCommentsCount (1, 200);
+const photoCommentsCount = _.random(1, 100);
+// photoCommentsCount (1, 100);
 
 const photoComments = _.random(0, MESSAGE.length - 1);
 

@@ -1,6 +1,6 @@
 import {randomComment} from './create-comment.js';
 import {PHOTOS, DESCRIPTION} from './arrays.js';
-
+// import { photoId, photoUrl, photoDescriptionIndex, likesId, photoComments} from './utils.js';
 const SIMILAR_OBJECT_COUNT = 25;
 
 const createObject = () => {
@@ -18,4 +18,5 @@ const createObject = () => {
   };
 };
 const similarObject = Array.from({length: SIMILAR_OBJECT_COUNT}, createObject);
+console.log(similarObject);
 export {similarObject};
