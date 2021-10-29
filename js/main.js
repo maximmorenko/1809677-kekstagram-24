@@ -1,4 +1,4 @@
-// import {similarObjects} from './create-object.js';
+import {similarObjects} from './data.js';
 
 // import {randomComment} from './create-comment.js';
 
@@ -6,7 +6,7 @@
 
 import {addPreviewPicture} from './preview-pictures.js';
 
-// similarObjects();
+similarObjects();
 // randomComment();
 // infoPhotos();
 addPreviewPicture();

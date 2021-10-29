@@ -1,10 +1,10 @@
-import {similarObject} from './create-object.js';
+import {similarObjects} from './data.js';
 
 const addPreviewPicture = function() {
   const PICTURE = document.querySelector('.pictures');
   const templateFragment = document.querySelector('#picture').content.querySelector('.picture');
   const fragment = document.createDocumentFragment();
-  similarObject.forEach((element) => {
+  similarObjects.forEach((element) => {
     const photo = templateFragment.cloneNode(true);
     photo.querySelector('.picture__img').src = element.img;
     photo.querySelector('.picture__comments').textContent = element.comments.length;
