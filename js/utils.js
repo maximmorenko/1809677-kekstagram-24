@@ -1,24 +1,21 @@
-import {DESCRIPTION, PHOTOS, AVATAR, MESSAGE, NAME} from './arrays.js';
+const isEscapeKey = (evt) => evt.key === 'Escape';
 
-const photoId = _.random(1, 25);
-// photoId(1, 25);
+// function randomNumber (min, max) {
+//   min = Math.ceil(min);
+//   max = Math.floor(max);
+//   if (min > max || min === max || min < 0) {
+//     return false;
+//   }
+//   return Math.round(Math.random() * (max - min) + min);
+// }
 
-const photoUrl = _.random(0, PHOTOS.length - 1);
+function getRandomPositiveInteger (a, b) {
 
-const likesId = _.random(15, 200);
-// likesId(15, 200);
+  const lower = Math.ceil(Math.min(Math.abs(a), Math.abs(b)));
+  const upper = Math.floor(Math.max(Math.abs(a), Math.abs(b)));
 
-const photoCommentsCount = _.random(1, 100);
-// photoCommentsCount (1, 100);
+  const result = Math.random() * (upper - lower + 1) + lower;
+  return Math.floor(result);
+}
 
-const photoComments = _.random(0, MESSAGE.length - 1);
-
-const avatarUrl = _.random(0, AVATAR.length - 1);
-
-const randomNameIndex = _.random(0, NAME.length - 1);
-
-const photoDescriptionIndex = _.random(0, DESCRIPTION.length - 1);
-
-// randomComent
-
-export {photoUrl, photoId, likesId, photoCommentsCount, randomNameIndex, photoDescriptionIndex, avatarUrl, photoComments};
+export {isEscapeKey, getRandomPositiveInteger};

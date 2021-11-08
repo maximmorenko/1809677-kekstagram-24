@@ -1,12 +1,7 @@
 import {similarObjects} from './data.js';
+import {addMiniPictures} from './preview-pictures.js';
+// import {openPost} from './create-big-picture.js';
 
-// import {randomComment} from './create-comment.js';
-
-// import {infoPhotos} from './create-big-picture.js';
-
-import {addPreviewPicture} from './preview-pictures.js';
-
-similarObjects();
-// randomComment();
-// infoPhotos();
-addPreviewPicture();
+const postsArray = similarObjects;
+addMiniPictures(postsArray);
+// openPost(postsArray);
