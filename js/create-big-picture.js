@@ -52,4 +52,4 @@ const openFullPicture = (evt, postsArray) => {
 };
 
 closeFullPictureButton.addEventListener('click', closeFullPicture);
-// export {openPost};
+export {openFullPicture};
