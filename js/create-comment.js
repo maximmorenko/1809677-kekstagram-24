@@ -1,3 +1,5 @@
+import getRandomPositiveInteger from './utils/get-random-positive-integer.js';
+
 const SIMILAR_COMENT_COUNT = 25;
 const AVATAR = [
   'img/avatar-1.svg',
@@ -24,10 +26,11 @@ const NAME = [
   'Павлина',
 ];
 const createComment = () => {
-  const randomIdComment = _.random(0, 25);
-  const randomAvatar = _.random(0, AVATAR.length - 1);
-  const randomMessage = _.random(0, MESSAGE.length - 1);
-  const randomName = _.random(0, NAME.length - 1);
+  const randomIdComment = getRandomPositiveInteger(0, 25);
+  const randomAvatar = getRandomPositiveInteger(0, AVATAR.length - 1);
+  const randomMessage = getRandomPositiveInteger(0, MESSAGE.length - 1);
+  const randomName = getRandomPositiveInteger(0, NAME.length - 1);
+
   return {
     idComment: randomIdComment,
     avatar: AVATAR[randomAvatar],
@@ -35,5 +38,7 @@ const createComment = () => {
     name: NAME[randomName],
   };
 };
-const randomComent = Array.from({length: SIMILAR_COMENT_COUNT}, createComment);
+
+const randomComent = () => Array.from({length: getRandomPositiveInteger(0, SIMILAR_COMENT_COUNT)}, createComment);
 export {randomComent};
+
