@@ -1,22 +1,22 @@
 import getRandomPositiveInteger from './utils/get-random-positive-integer.js';
 
+const openUploader = function () {
+  document.querySelector('.img-upload__overlay').classList.remove('hidden');
+  document.querySelector('body').classList.add('modal-open');
+  document.querySelector('.scale__control--value').value = 100;
+  document.querySelector('.text__hashtags').focus();
+};
+
+const closeUploader = function () {
+  document.querySelector('.img-upload__overlay').classList.add('hidden');
+  document.querySelector('body').classList.remove('modal-open');
+
+  document.querySelector('.text__hashtags').value = '';
+  document.querySelector('.text__description').value = '';
+};
+
 const uploader = function () {
   const UploadFile = document.querySelector('#upload-file');
-
-  const openUploader = function () {
-    document.querySelector('.img-upload__overlay').classList.remove('hidden');
-    document.querySelector('body').classList.add('modal-open');
-    document.querySelector('.scale__control--value').value = 100;
-    document.querySelector('.text__hashtags').focus();
-  };
-
-  const closeUploader = function () {
-    document.querySelector('.img-upload__overlay').classList.add('hidden');
-    document.querySelector('body').classList.remove('modal-open');
-
-    document.querySelector('.text__hashtags').value = '';
-    document.querySelector('.text__description').value = '';
-  };
 
   const handlerClick = function (event) {
     const targetElement = event.target;
@@ -95,37 +95,10 @@ const uploader = function () {
       }
     };
   });
+};
 
-    // form submit
-    document.querySelector('#upload-select-image').addEventListener('submit', function (event) {
-      event.preventDefault();
-
-      const formData = new FormData(event.target);
-      const formProps = Object.fromEntries(formData);
-
-      const XHR = new XMLHttpRequest();
-
-      XHR.addEventListener('load', function (event) {
-        const tpl = document.querySelector('#success').innerHTML;
-        const template = document.createElement('span');
-        template.innerHTML = tpl;
-        document.body.appendChild(template);
-
-        closeUploader();
-      });
-
-      XHR.addEventListener('error', function (event) {
-        const tpl = document.querySelector('#error').innerHTML;
-        const template = document.createElement('span');
-        template.innerHTML = tpl;
-        document.body.appendChild(template);
-
-        closeUploader();
-      });
-
-      XHR.open('POST', ' https://24.javascript.pages.academy/kekstagram');
-      XHR.send(formData);
-    });
-  };
-
-  export default uploader;
+export {
+  uploader,
+  openUploader,
+  closeUploader
+};
